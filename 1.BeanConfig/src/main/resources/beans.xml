@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is beans.xml file. This is a type of Spring configuration file.
+This is created with the configuration metadata that is later supplied to the
+Container  -->
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+   
+   <!-- Here we are passing the constructor requirements for class Address.
+  constructor-arg is used to initialize the values of constructors.
+  Here id is the object name and class is the path of your class-->
+  
+   <bean id="address" class="com.beanconfig.Address">
+ <constructor-arg name="flatNo" value="191"></constructor-arg>
+ <constructor-arg name="Road" value="4thCrossRoad"></constructor-arg>
+ <constructor-arg name="City" value="Bangalore"></constructor-arg>
+ </bean>
+ 
+ <!-- Here we are passing the constructor requirements for class Employee.
+  constructor-arg is used to initialize the values of constructors.
+  Then we are initializing the contents of address using ref and stating 
+  the id in Address class -->
+  
+  <bean id="employee" class="com.beanconfig.Employee">
+		<constructor-arg name="Eid" value="4724"></constructor-arg>
+		<constructor-arg name="Ename" value="Ronit"></constructor-arg>
+		<constructor-arg name="Dept" value="Technology"></constructor-arg>
+		<constructor-arg name="address" ref ="address"></constructor-arg>
+		
+	</bean>
+
+</beans>
