@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is beans.xml file. This is a type of Spring configuration file.
+This is created with the configuration metadata that is later supplied to the
+Container  -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+   
+   <!-- <context:annotation-config/> looks for the annotations on beans in
+    the same application context it is defined in.  This is mainly used to
+     activate the dependency injection annotations.  -->
+     
+   <context:annotation-config/>
+   
+   <!--context:component- scan element helps to identify the java classes
+    which can be registered as a spring beans within the specified package.  -->
+    
+   <context:component-scan base-package="com.annoconfig"></context:component-scan>
+   
+   <bean id="property1" class="com.annoconfig.Properties">
+   <property name="shape"  value="Square"></property>
+   <property name="sides"  value="4"></property>
+   <property name="Angle"  value="90"></property>
+   </bean>
+   
+   <bean id="property2" class="com.annoconfig.Properties">
+   <property name="shape"  value="Triangle"></property>
+   <property name="sides"  value="3"></property>
+   <property name="Angle"  value="90"></property>
+   </bean>
+   
+   <!-- Since we have used @Component annotation for Shape class so we don't
+   need to create bean id for that class.  -->
+   
+   <!-- <bean id="shape" class="com.annoconfig.Shape">
+   </bean> -->
+   
+   </beans>
